@@ -44,10 +44,9 @@ businessRoutes.route('/update/:id').post(function (req, res) {
     if (!business)
       res.status(404).send("data is not found");
     else {
-        business.person_name = req.body.person_name;
-        business.business_name = req.body.business_name;
-        business.business_gst_number = req.body.business_gst_number;
-
+        business.objectID = req.body.objectID;
+        business.userID = req.body.userID;
+        
         business.save().then(business => {
           res.json('Update complete');
         })
