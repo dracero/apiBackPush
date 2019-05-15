@@ -3,17 +3,14 @@ const Schema = mongoose.Schema;
 
 // Define collection and schema for Business
 let Business = new Schema({
-  person_name: {
+  objectID: {
     type: String
   },
-  business_name: {
+  userID: {
     type: String
-  },
-  business_gst_number: {
-    type: Number
   }
 },{
     collection: 'business'
 });
 
-module.exports = mongoose.model('Business', Business);
+module.exports = mongoose.model('webPush', webPush);
