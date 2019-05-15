@@ -17,7 +17,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use('/business', businessRoute);
+app.use('/webpush', businessRoute);
 
 app.listen(process.env.PORT || 3000, function() {
   console.log("Server is running on Port:", process.env.PORT || 3000);
