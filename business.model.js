@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Define collection and schema for Business
-let Business = new Schema({
+let webPush = new Schema({
   objectID: {
     type: String
   },
@@ -10,7 +10,7 @@ let Business = new Schema({
     type: String
   }
 },{
-    collection: 'business'
+    collection: 'oldstore'
 });
 
 module.exports = mongoose.model('webPush', webPush);
