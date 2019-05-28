@@ -8,14 +8,21 @@ let Business = require('./business.model');
 
 // Defined store route
 businessRoutes.route('/add').post(function (req, res) {
-  let business = new Business(req.body);
-  business.save()
-    .then(business => {
-      res.status(200).json({'business': 'business in added successfully'});
-    })
-    .catch(err => {
-      res.status(400).send("unable to save to database");
-    });
+  const isValidSaveRequest = (req, res) => {
+  // Check the request body has at least an endpoint.
+  if (!req.body || !req.body.endpoint) {
+    // Not a valid subscription.
+    res.status(400);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+      error: {
+        id: 'no-endpoint',
+        message: 'Subscription must have an endpoint.'
+      }
+    }));
+    return false;
+  }
+  return true;
 });
 
 // Defined get data(index or listing) route
