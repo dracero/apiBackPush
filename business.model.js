@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 // Define collection and schema for Business
 let webPush = new Schema(
-  { variable: JSON.stringify(myObject)
+  { variable: Object
     /*endpoint: String,
     expirationdate: String,
     keys:[{ p256h: String, auth: String }]*/
