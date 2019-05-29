@@ -6,7 +6,7 @@ let webPush = new Schema(
   {
     endpoint: String,
     expirationTime: Date,
-    keys: { p256h: String, auth: String }
+    keys: Array
   },
   { collection: "oldstore" }
 );
