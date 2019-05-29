@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 let webPush = new Schema(
   {
     endpoint: String,
-    expirationdate: Date,
-    keys:[]    
+    expirationdate: String,
+    keys:[{ p256h: String, auth: String }]
   },
   { collection: "oldstore" }
 );
