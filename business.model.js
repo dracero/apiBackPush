@@ -4,9 +4,9 @@ const Schema = mongoose.Schema;
 // Define collection and schema for Business
 let webPush = new Schema(
   {
-    title: String,
-    body: String 
-    
+    endpoint: String,
+    expirationdate: Date,
+    keys:[]    
   },
   { collection: "oldstore" }
 );
