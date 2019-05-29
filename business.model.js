@@ -3,9 +3,11 @@ const Schema = mongoose.Schema;
 
 // Define collection and schema for Business
 let webPush = new Schema({
- //myJsonProperty: Object
- title: String,
- body:String
+ myJsonProperty: Object
+ /*endpoint: {
+    type: Map,
+    of: String
+   }*/
 },{collection: 'oldstore'});
 
 
