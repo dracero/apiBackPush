@@ -58,8 +58,8 @@ businessRoutes.route('/update/:id').post(function (req, res) {
 });
 
 // Defined delete | remove | destroy route
-businessRoutes.route('/delete/:id').get(function (req, res) {
-    Business.findByIdAndRemove({_id: req.params.id}, function(err, business){
+businessRoutes.route('/delete/:variable').get(function (req, res) {
+    Business.findByIdAndRemove({variable: req.params.variable}, function(err, business){
         if(err) res.json(err);
         else res.json('Successfully removed');
     });
