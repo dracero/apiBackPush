@@ -61,7 +61,7 @@ businessRoutes.route('/update/:id').post(function (req, res) {
 businessRoutes.route('/delete/:variable').get(function (req, res) {
      let variable = req.params.variable;
    //Business.findOneAndRemove({variable:req.params.variable}, function(err, business){
-     Business.findOneAndRemove(variable, function(err, business){
+     Business.findOneAndRemove({variable}, function(err, business){
         if(err) res.json(err);
         else res.status(200).json({'Delete': 'business in deleted successfully'});
     });
